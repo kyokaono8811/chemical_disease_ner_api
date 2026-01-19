@@ -186,8 +186,8 @@ MIT License - see LICENSE file for details
 
 ```
 Input: "Aspirin reduces inflammation and treats headaches"
-images/example1.png
-images/example2.png
+![Example 1](images/example1.png)
+![Example 2](images/example2.png)
 
 ```
 
