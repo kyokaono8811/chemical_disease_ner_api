@@ -1,0 +1,14 @@
+# Core dependencies
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+pydantic==2.5.3
+
+# ML and NLP - EXACT compatible versions
+torch==2.1.2
+transformers==4.37.2
+peft==0.8.2
+accelerate==0.27.2
+
+# Utilities
+numpy==1.26.3
+python-multipart==0.0.6
