@@ -1,4 +1,4 @@
-# Chemical/Disease Named Entity Recognition API
+# Chemical/Disease Named Entity Recognition (NER) API
 
 A production-ready REST API for biomedical Named Entity Recognition (NER) using a fine-tuned BERT model with LoRA (Low-Rank Adaptation).
 
@@ -185,7 +185,10 @@ MIT License - see LICENSE file for details
 ## Example Results
 
 ```
-Input: "Aspirin reduces inflammation and treats headaches"
+Input:
+{
+"text":  "Aspirin reduces inflammation and treats headaches"
+}
 
 ```
 
