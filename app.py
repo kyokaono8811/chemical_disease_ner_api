@@ -125,7 +125,7 @@ async def predict_entities(input_data: TextInput):
             input_data.text,
             return_tensors="pt",
             truncation=True,
-            padding="max_length,
+            padding="max_length",
             max_length=128
         ).to(device)
         

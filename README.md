@@ -13,6 +13,7 @@ The model is fine-tuned using LoRA for efficient training and deployment.
 ## Features
 
 - FastAPI-based REST API
+- Interactive API documentation (Swagger UI)
 - Containerized for easy deployment
 - LoRA fine-tuned BERT model
 - Trained on BC5CDR biomedical dataset
