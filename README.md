@@ -13,7 +13,7 @@ The model is fine-tuned using LoRA for efficient training and deployment.
 ## Features
 
 - FastAPI-based REST API
-- Dockerized for easy deployment
+- Containerized for easy deployment
 - LoRA fine-tuned BERT model
 - Trained on BC5CDR biomedical dataset
 
@@ -42,8 +42,8 @@ The model is fine-tuned using LoRA for efficient training and deployment.
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/ner-api.git
-cd ner-api
+git clone https://github.com/YOUR_USERNAME/chemical_disease_ner_api.git
+cd chemical_disease_ner_api
 
 # Build and run
 docker-compose up --build
@@ -53,8 +53,8 @@ docker-compose up --build
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/ner-api.git
-cd ner-api
+git clone https://github.com/YOUR_USERNAME/chemical_disease_ner_api.git
+cd chemical_disease_ner_api
 
 # Install dependencies
 pip install -r requirements.txt
@@ -85,31 +85,7 @@ print(result)
 
 ### cURL Example
 
-```bash
-curl -X POST "http://localhost:8000/predict" \
-  -H "Content-Type: application/json" \
-  -d '{"text": "Diabetes is treated with insulin"}'
-```
-
-### Expected Response
-
-```json
-{
-  "text": "Aspirin is used to treat headaches",
-  "entities": [
-    {
-      "word": "Aspirin",
-      "entity": "B-Chemical",
-      "score": 0.956
-    },
-    {
-      "word": "headaches",
-      "entity": "B-Disease",
-      "score": 0.892
-    }
-  ]
-}
-```
+![Curl Example](images/curl.png)
 
 ## API Endpoints
 
@@ -124,7 +100,7 @@ curl -X POST "http://localhost:8000/predict" \
 ## Project Structure
 
 ```
-.
+ner-project
 ├── app.py                 
 ├── requirements.txt       
 ├── Dockerfile            
@@ -158,25 +134,10 @@ See the training notebook in `notebooks/` for details.
 docker-compose up
 ```
 
-### Cloud Platforms
-
-#### AWS ECS/Fargate
-```bash
-# Build and push to ECR
-docker build -t ner-api .
-docker tag ner-api:latest <account>.dkr.ecr.region.amazonaws.com/ner-api:latest
-docker push <account>.dkr.ecr.region.amazonaws.com/ner-api:latest
-```
-
-#### Google Cloud Run
-```bash
-gcloud run deploy ner-api --source . --platform managed
-```
-
 ## Known Limitations
 
 - Model currently detects only Chemicals and Diseases
-- Maximum input length: 512 tokens
+- Maximum input length: 128 tokens
 
 ## License
 
